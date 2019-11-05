@@ -1,0 +1,2 @@
+---
+pakrat_client::default_os_info: centos/$releasever/$basearch
