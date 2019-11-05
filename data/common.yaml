@@ -1,9 +1,9 @@
 ---
 lookup_options:
-  baseline_cfg::yum::pakrat_client::repos:
-    merge:
-      strategy: deep
-      knockout_prefix: '-'
+    pakrat_client::repos:
+        merge:
+            strategy: deep
+            knockout_prefix: '-'
 
 pakrat_client::default_snapshot: ''
 pakrat_client::default_yumserver_url: ''
