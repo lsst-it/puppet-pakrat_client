@@ -27,7 +27,7 @@
 #            reponame:      (optional) override Repo_Name
 #            * <any valid attribute to pass to Puppet yumrepo resource>
 
-class pakrat_client {
+class pakrat_client (
     String $default_snapshot,
     String $default_yumserver_url,
     String $default_os_info,
