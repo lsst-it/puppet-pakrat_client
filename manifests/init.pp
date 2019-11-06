@@ -36,7 +36,7 @@ class pakrat_client (
 ) {
 
     # Keys used for baseurl construction
-    $baseurl_keys = [ 'yumserver_url', 'snapshot', 'os_info', 'reponame' ]
+    $baseurl_keys = [ 'yumserver_url', 'os_info', 'reponame', 'snapshot' ]
 
     $repos.each | String[1] $reponame, Hash $repodata| {
 
@@ -72,8 +72,13 @@ class pakrat_client (
         $config = $repodata - $baseurl_keys + $custom
 
         # Declare the yumrepo resource
-        yumrepo { $reponame:
-            * => $config,
+        yumrepo {
+            $reponame:
+                * => $config,
+            ;
+            default:
+                mirrorlist => absent,
+            ;
         }
     }
 
